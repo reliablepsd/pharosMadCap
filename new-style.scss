@@ -284,9 +284,26 @@ html {
 				+li {
 					margin-top: 5px;
 				}
+				.submenu-toggle-container {
+					&:before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 0;
+						height: 0;
+						border: solid var(--color-gray);
+						border-width: 0 2px 2px 0;
+						padding: 2px;
+						transition: all 0.3s ease;
+						transform:  translate(-50%, -50%) rotate(45deg);
+						transform-origin: center center;
+					}
+
+				}
 
 				.submenu-toggle {
-					border-top-color: var(--color-brand) !important;
+					border-top-color: transparent !important;
 					transition: all 0.3s ease;
 				}
 
@@ -305,20 +322,18 @@ html {
 						font-weight: bold;
 						color: #fff;
 						background-color: var(--color-brand);
-
-						.submenu-toggle {
-							border-top-color: #fff !important;
-						}
 					}
 
 					&.selected {
 						font-weight: bold;
 						color: #fff;
 						background-color: var(--color-brand);
-
-						.submenu-toggle {
-							border-top-color: #fff !important;
-							transform: rotate(180deg) !important;
+						.submenu-toggle-container {
+							&:before {
+								border: solid #fff;
+								border-width: 0 2px 2px 0;
+								transform:  translate(-50%, -50%) rotate(-135deg);
+							}
 						}
 					}
 				}

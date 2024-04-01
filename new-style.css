@@ -259,8 +259,25 @@ html .sidenav-wrapper .menu li {
 html .sidenav-wrapper .menu li + li {
   margin-top: 5px;
 }
+html .sidenav-wrapper .menu li .submenu-toggle-container:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: solid var(--color-gray);
+  border-width: 0 2px 2px 0;
+  padding: 2px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
 html .sidenav-wrapper .menu li .submenu-toggle {
-  border-top-color: var(--color-brand) !important;
+  border-top-color: transparent !important;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -281,18 +298,16 @@ html .sidenav-wrapper .menu li a:hover {
   color: #fff;
   background-color: var(--color-brand);
 }
-html .sidenav-wrapper .menu li a:hover .submenu-toggle {
-  border-top-color: #fff !important;
-}
 html .sidenav-wrapper .menu li a.selected {
   font-weight: bold;
   color: #fff;
   background-color: var(--color-brand);
 }
-html .sidenav-wrapper .menu li a.selected .submenu-toggle {
-  border-top-color: #fff !important;
-  -webkit-transform: rotate(180deg) !important;
-          transform: rotate(180deg) !important;
+html .sidenav-wrapper .menu li a.selected .submenu-toggle-container:before {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+          transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 html ._Skins_TopicToolBar.mc-component.buttons .button {
