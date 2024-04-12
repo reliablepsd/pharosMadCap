@@ -94,7 +94,7 @@ body {
   margin-bottom: 20px;
 }
 #mc-main-content p:not([class]) a {
-  color: inherit;
+  color: #743BBC;
 }
 #mc-main-content p:not([class]) a:hover {
   text-decoration: none;
@@ -102,21 +102,24 @@ body {
 #mc-main-content p:not([class]) + h2 {
   margin-top: 5rem;
 }
-#mc-main-content ul,
 #mc-main-content ol {
   padding-left: 20px;
   margin: 15px 0;
 }
-#mc-main-content ul li,
-#mc-main-content ol li {
-  list-style: disc;
-}
-#mc-main-content ul li + li,
 #mc-main-content ol li + li {
   margin-top: 15px;
 }
-#mc-main-content ul p:last-child,
-#mc-main-content ol p:last-child {
+#mc-main-content ul {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+#mc-main-content ul li {
+  list-style: disc;
+}
+#mc-main-content ul li + li {
+  margin-top: 15px;
+}
+#mc-main-content ul p:last-child {
   margin-bottom: 0;
 }
 
@@ -129,12 +132,16 @@ html .title-bar-layout {
   margin-left: auto;
   margin-right: auto;
   grid-gap: 3rem;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 @media (max-width: 768px) {
   html .title-bar-layout {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 html .title-bar-layout .navigation-wrapper {
@@ -158,7 +165,8 @@ html .title-bar-layout .nav-search-wrapper .search .search-submit-wrapper {
   width: 30px;
   height: 30px;
   top: 49%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 html .title-bar-layout .nav-search-wrapper .search .search-submit-wrapper .search-submit {
   background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.14714 14.8753C11.8636 14.8753 14.8763 11.8626 14.8763 8.14616C14.8763 4.42974 11.8636 1.41699 8.14714 1.41699C4.43072 1.41699 1.41797 4.42974 1.41797 8.14616C1.41797 11.8626 4.43072 14.8753 8.14714 14.8753Z' stroke='%23888B8D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5846 15.5837L14.168 14.167' stroke='%23888B8D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -167,6 +175,7 @@ html .title-bar-layout .nav-search-wrapper .search .search-submit-wrapper .searc
   background-color: initial;
   height: 100%;
   width: 100%;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 html .title-bar-layout .nav-search-wrapper .search .search-submit-wrapper .search-submit:hover {
@@ -186,7 +195,8 @@ html .title-bar-layout .nav-search-wrapper input {
 }
 html .title-bar-layout .logo-wrapper {
   min-height: initial;
-  flex-basis: initial;
+  -ms-flex-preferred-size: initial;
+      flex-basis: initial;
 }
 @media (min-width: 769px) {
   html .title-bar-layout .logo-wrapper {
@@ -197,10 +207,15 @@ html .title-bar-layout a.logo {
   width: auto;
   height: auto;
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   grid-gap: 5px;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   background: initial;
 }
@@ -233,7 +248,8 @@ html nav.title-bar {
 html .sidenav-wrapper {
   max-width: 300px;
   width: 100%;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   background-color: #fff;
 }
 html .sidenav-wrapper .is-accordion-submenu.nested {
@@ -260,12 +276,16 @@ html .sidenav-wrapper .menu li .submenu-toggle-container:before {
   border: solid var(--color-gray);
   border-width: 0 2px 2px 0;
   padding: 2px;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  transform: translate(-50%, -50%) rotate(45deg);
-  transform-origin: center center;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 html .sidenav-wrapper .menu li .submenu-toggle {
   border-top-color: transparent !important;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 html .sidenav-wrapper .menu li a {
@@ -277,6 +297,7 @@ html .sidenav-wrapper .menu li a {
   line-height: 16px;
   padding: 9px 25px 9px 15px;
   margin: 0;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 html .sidenav-wrapper .menu li a:hover {
@@ -292,19 +313,22 @@ html .sidenav-wrapper .menu li a.selected {
 html .sidenav-wrapper .menu li a.selected .submenu-toggle-container:before {
   border: solid #fff;
   border-width: 0 2px 2px 0;
-  transform: translate(-50%, -50%) rotate(-135deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+          transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 html ._Skins_TopicToolBar.mc-component.buttons .button {
   background: var(--color-brand);
   color: #fff;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 html ._Skins_TopicToolBar.mc-component.buttons .button:hover {
   opacity: 0.7;
 }
 html ._Skins_TopicToolBar.mc-component.buttons .button .button-icon {
-  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
 }
 
-/* new style March 24y - end *//*# sourceMappingURL=new-style.css.map */
+/* new style March 24y - end */
