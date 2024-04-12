@@ -58,7 +58,6 @@ body {
 }
 .content .sideContent ul.menu._Skins_SideMenu.mc-component {
   border-radius: 4px;
-  background: var(--color-brand);
   padding: 10px;
 }
 .content .sideContent ul.menu._Skins_SideMenu.mc-component .sub-menu {
