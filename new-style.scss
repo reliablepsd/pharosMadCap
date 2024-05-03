@@ -532,7 +532,6 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 	}
 }
 
-/* new style March - April 24y - end */
 .page-header-menu {
 	border-top: 1px solid #e0e0e0;
 	background-color: #fff;
@@ -543,12 +542,14 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 		padding: 0px 20px;
 		margin: 0;
 		display: flex;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 		grid-gap: 40px;
 		z-index: 3;
 
 		@include media("<=desktop") {
 			grid-gap: 20px;
+			overflow-y: hidden;
+			overflow-x: auto;
 		}
 
 		&._sub-nav {
@@ -598,6 +599,8 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 			line-height: 16px;
 			text-decoration: none;
 			position: relative;
+			z-index: 3;
+			white-space: nowrap;
 
 			@include media("<=tablet") {
 				padding: 15px 0px;
@@ -612,14 +615,19 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 			&:before {
 				content: "";
 				position: absolute;
-				bottom: 0px;
+				bottom: -3px;
 				left: 0px;
 				right: 0;
 				height: 0px;
 				background-color: #743BBC;
 				transition: all 0.3s ease;
 				z-index: 2;
+				@include media("<=desktop") {
+					bottom: 0px;
+				}
 			}
 		}
 	}
 }
+
+/* new style March - May 24y - end */
