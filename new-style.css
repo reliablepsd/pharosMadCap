@@ -493,6 +493,10 @@ html ._Skins_TopicToolBar.mc-component.buttons .button .button-icon {
   opacity: 0;
   pointer-events: none;
 }
+.page-header-menu .nav._main-sub-nav {
+  background-color: #fafafa;
+  border-top: 1px solid #e0e0e0;
+}
 .page-header-menu .nav li {
   list-style: none;
 }

@@ -568,6 +568,11 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 			pointer-events: none;
 		}
 
+		&._main-sub-nav {
+			background-color: #fafafa;
+			border-top: 1px solid #e0e0e0;
+		}
+
 		li {
 			list-style: none;
 		}
