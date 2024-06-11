@@ -635,4 +635,20 @@ html ._Skins_TopicToolBar.mc-component.buttons .button {
 	}
 }
 
+
 /* new style March - May 24y - end */
+
+/* new style June - August 24y - end */
+#contentBody #mc-main-content a {
+  color: #3d3935 !important;
+  font-weight: 700;
+  border: none !important;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    color: #753bbd !important;
+  }
+}
+/* new style June - August 24y - end */
